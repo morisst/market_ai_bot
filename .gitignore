@@ -1,0 +1,7 @@
+#
+/env
+/node_modules
+/60minute
+/model
+
+*.zip
