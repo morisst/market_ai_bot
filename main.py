@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 from joblib import dump, load
 
 FILE_NAME = '15_minutes.csv'
-TRAIN_LABELS = ['time', 'open', 'close', 'low', 'high', 'volume', 'MovingAverage20', 'MovingAverage50', 'MovingAverage100']
+TRAIN_LABELS = ['time', 'open', 'close', 'low', 'high', 'MovingAverage20', 'MovingAverage50', 'MovingAverage100']
 TEST_LABEL = 'ShouldBuy'
 CSV_PATH = 'data_to_train/'+FILE_NAME
 MODEL_PATH = 'models/'+FILE_NAME.replace('.csv', '.joblib')
@@ -58,7 +58,7 @@ dump(clf, MODEL_PATH)
 # Predict from a CSV file
 y_pred_csv = predict_from_csv(CSV_PATH, MODEL_PATH)
 print("Predictions from CSV:", y_pred_csv)
-
+print("Accuracy", accuracy_score(y, y_pred_csv))
 # Predict from literals
 # y_pred_literals = predict_from_literals(1633062400000, 8285.45, 8292.1, 8285.45, 8295.9, 0, 8285.45, 8292.1, 8295.9, MODEL_PATH)
 # print("Predictions from literals:", y_pred_literals)
