@@ -51,12 +51,14 @@ X, y = load_data(CSV_PATH)
 
 # Train the model
 clf = train_model(X, y)
+# clf = load(MODEL_PATH)
 
 # Save the model
 dump(clf, MODEL_PATH)
 
 # Predict from a CSV file
-y_pred_csv = predict_from_csv(CSV_PATH, MODEL_PATH)
+# y_pred_csv = predict_from_csv(CSV_PATH, MODEL_PATH)
+y_pred_csv = predict_from_literals(1706175000000,21266.4,21343.3,21266.4,21360.0,0,1,21290.40,21316.05,21433.87, MODEL_PATH)
 print("Predictions from CSV:", y_pred_csv)
 print("Accuracy", accuracy_score(y, y_pred_csv))
 # Predict from literals
